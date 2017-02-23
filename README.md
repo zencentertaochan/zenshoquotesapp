@@ -1,4 +1,4 @@
-# A Blank PhoneGap App
+# Zenshos Quotes App
 
 ## Usage
 
