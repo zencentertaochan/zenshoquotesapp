@@ -2,13 +2,14 @@
 <widget id="org.taochan.zenshoquotes" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Zensho Quotes</name>
     <description>
-        A blank PhoneGap app.
+        Quotes of Zen-Master Zensho W. Kopp
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="anfrage@tao-chan.de" href="http://tao-chan.org">
+        Zen-Center Tao Chan
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <icon src="res/icon.png" />
     <engine name="ios" spec="~4.3.1" />
     <engine name="android" spec="~6.0.0" />
 </widget>
