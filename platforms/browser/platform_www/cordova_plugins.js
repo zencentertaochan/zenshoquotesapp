@@ -52,6 +52,20 @@ module.exports = [
         "clobbers": [
             "window.plugins.socialsharing"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+        "id": "cordova-plugin-splashscreen.SplashScreen",
+        "pluginId": "cordova-plugin-splashscreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-splashscreen/src/browser/SplashScreenProxy.js",
+        "id": "cordova-plugin-splashscreen.SplashScreenProxy",
+        "pluginId": "cordova-plugin-splashscreen",
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -63,7 +77,8 @@ module.exports.metadata =
     "cordova-plugin-device": "1.1.4",
     "cordova-plugin-email-composer": "0.8.3",
     "cordova-plugin-whitelist": "1.3.1",
-    "cordova-plugin-x-socialsharing": "5.1.6"
+    "cordova-plugin-x-socialsharing": "5.1.6",
+    "cordova-plugin-splashscreen": "4.0.2-dev"
 }
 // BOTTOM OF METADATA
 });

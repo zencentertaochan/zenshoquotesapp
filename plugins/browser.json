@@ -24,6 +24,9 @@
         },
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
         }
     },
     "dependent_plugins": {
