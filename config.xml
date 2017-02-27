@@ -18,7 +18,7 @@
   <allow-intent href="sms:*"/>
   <allow-intent href="mailto:*"/>
   <allow-intent href="geo:*"/>
-  <icon src="resources\android\icon\drawable-xhdpi-icon.png"/>
+  <icon src="res/icon.png"/>
   <platform name="android">
     <allow-intent href="market:*"/>
     <icon src="resources\android\icon\drawable-ldpi-icon.png" density="ldpi"/>
