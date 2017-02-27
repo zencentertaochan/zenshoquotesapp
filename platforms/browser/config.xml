@@ -18,5 +18,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <icon src="res/icon.png" />
+    <icon src="resources\android\icon\drawable-xhdpi-icon.png" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
 </widget>

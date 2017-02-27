@@ -292,6 +292,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-	 //  login page
+	 //  start page
   	$urlRouterProvider.otherwise("/wordpress/blog");
 })
