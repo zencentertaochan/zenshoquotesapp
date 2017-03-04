@@ -21,7 +21,7 @@ app.run(function($rootScope, globalFactory) {
 /* Blog controller */
 app.controller('WordpressBlogCtrl', ['$scope', 'WordPress', '$state', function($scope, WordPress, $state) {	
 
-	$scope.heading = "WordPress";
+	$scope.heading = "Zenshos Quotes";
 	$scope.items = [];
 	$scope.times = 1 ;
 	$scope.postsCompleted = false;
@@ -58,6 +58,9 @@ app.controller('WordpressPostCtrl', ['$scope', 'WordPress', '$stateParams', '$sc
 	$scope.post = WordPress.postSelected;
 	$scope.allContent = $sce.trustAsHtml($scope.post.content);
 }])
+
+
+
 /* category and tags controller */
 app.controller('WordpressTagCtrl', ['$scope', '$state', 'WordPress', '$stateParams', function($scope, $state, WordPress, $stateParams) {
 	

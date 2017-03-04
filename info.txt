@@ -1,3 +1,9 @@
+Node version: v6.9.5
+
+Cordova version: 6.5.0
+
+Config.xml file: 
+
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="org.taochan.zenshoquotes.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Zenshos Quotes</name>
@@ -76,3 +82,21 @@
   <preference name="SplashScreen" value="splash"/>
   <preference name="AutoHideSplashScreen" value="true" />
 </widget>
+
+Plugins: 
+
+com.phonegap.plugins.PushPlugin,cordova-plugin-device,cordova-plugin-email-composer,cordova-plugin-splashscreen,cordova-plugin-whitelist,cordova-plugin-x-socialsharing
+
+Error retrieving Android platform information: 
+Android SDK is not set up properly. Make sure that the Android SDK 'tools' and 'platform-tools' directories are in the PATH variable. 
+
+Error: cmd: Command failed with exit code 1 Error output:
+Der Befehl "android" ist entweder falsch geschrieben oder
+konnte nicht gefunden werden.
+
+
+
+Error retrieving iOS platform information: Error: cmd: Command failed with exit code 1 Error output:
+Der Befehl "xcodebuild" ist entweder falsch geschrieben oder
+konnte nicht gefunden werden.
+

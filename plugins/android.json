@@ -13,9 +13,6 @@
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
         },
-        "cordova-plugin-admobpro": {
-            "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
-        },
         "com.phonegap.plugins.PushPlugin": {
             "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
         },
@@ -29,9 +26,5 @@
             "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
         }
     },
-    "dependent_plugins": {
-        "cordova-plugin-extension": {
-            "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
-        }
-    }
+    "dependent_plugins": {}
 }

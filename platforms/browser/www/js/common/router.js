@@ -182,15 +182,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-	 .state('app.admob', {
-      url: "/admob",
-      views: {
-        'menuContent' :{
-          	templateUrl: "templates/admob.html",
-		  		controller: "AdmobCtrl"
-        }
-      }
-    })
 	 .state('app.messages', {
       url: "/messages",
       views: {
@@ -292,6 +283,31 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-	 //  start page
-  	$urlRouterProvider.otherwise("/wordpress/blog");
+    // quotes
+  .state('quotes', {
+      url: "/quotes",
+      abstract: true,
+      templateUrl: "templates/quotes/sidebar-menu.html"
+    })
+    .state('quotes.latest', {
+      url: "/latest",
+      views: {
+        'menuQuotes' :{
+          	templateUrl: "templates/quotes/latest.html",
+		  		controller: "WordpressBlogCtrl"
+        }
+      }
+    })
+
+    .state('quotes.about', {
+      url: "/about",
+      views: {
+        'menuQuotes' :{
+          	templateUrl: "templates/quotes/about.html",
+		  		controller: "AboutCtrl"
+        }
+      }
+    })
+
+  	$urlRouterProvider.otherwise("/quotes/latest");
 })

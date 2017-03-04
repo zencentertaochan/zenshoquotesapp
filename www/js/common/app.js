@@ -13,11 +13,6 @@ app.constant("ConfigContact", {
   "EmailId": "weblogtemplatesnet@gmail.com",
   "ContactSubject": "Contact"
 })
-// config admon
-app.constant("ConfigAdmob", {
-  "interstitial": "ca-app-pub-3940256099942544/1033173712",
-  "banner": "ca-app-pub-3940256099942544/6300978111"
-})
 // push notification
 app.constant("PushNoti", {
   "senderID": "321948427526",

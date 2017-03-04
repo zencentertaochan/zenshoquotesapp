@@ -9,14 +9,6 @@ module.exports = [
         ]
     },
     {
-        "id": "cordova-plugin-admobpro.AdMob",
-        "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
-        "pluginId": "cordova-plugin-admobpro",
-        "clobbers": [
-            "window.AdMob"
-        ]
-    },
-    {
         "id": "cordova-plugin-device.device",
         "file": "plugins/cordova-plugin-device/www/device.js",
         "pluginId": "cordova-plugin-device",
@@ -54,8 +46,6 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "com.phonegap.plugins.PushPlugin": "2.5.0",
-    "cordova-plugin-extension": "1.5.1",
-    "cordova-plugin-admobpro": "2.26.0",
     "cordova-plugin-device": "1.1.4",
     "cordova-plugin-email-composer": "0.8.3",
     "cordova-plugin-splashscreen": "4.0.2-dev",
