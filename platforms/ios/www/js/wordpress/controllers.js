@@ -6,7 +6,7 @@ app.controller('WpCtrl', ['$scope', '$state', '$ionicSlideBoxDelegate', function
   	};
 	// sharing plugin
 	$scope.shareArticle = function(title,url){
-		window.plugins.socialsharing.share(title, null, null, url)
+		window.plugins.socialsharing.share(null, null, url,)
 	}
 	$scope.openLinkArticle = function(url){
 		window.open(url, '_system');
