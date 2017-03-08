@@ -5,8 +5,8 @@ app.controller('WpCtrl', ['$scope', '$state', '$ionicSlideBoxDelegate', function
     	$ionicSideMenuDelegate.toggleLeft();
   	};
 	// sharing plugin
-	$scope.shareArticle = function(title,url){
-		window.plugins.socialsharing.share(null, null, url,)
+	$scope.shareArticle = function(url){
+		window.plugins.socialsharing.share(null, null, url,null)
 	}
 	$scope.openLinkArticle = function(url){
 		window.open(url, '_system');
