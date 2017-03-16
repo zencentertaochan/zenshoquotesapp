@@ -29,9 +29,10 @@ app.controller('WordpressBlogCtrl', ['$scope', 'WordPress', '$state', function($
 	$scope.getPosts = function(){
 		WordPress.getPosts($scope.times)
 		.success(function (posts) {
+		    console.log(posts);
 			$scope.items = $scope.items.concat(posts.posts);
 			$scope.$broadcast('scroll.infiniteScrollComplete');
-			$scope.times = $scope.times + 1;
+			$scope.times = $scope.times+1;
 			if(posts.posts.length == 0) {
 				$scope.postsCompleted = true;
 			}

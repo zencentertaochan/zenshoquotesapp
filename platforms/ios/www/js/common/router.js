@@ -69,17 +69,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-	 // Blog page
-	 .state('app.blog', {
-      url: "/blog",
-		cache : false,
-      views: {
-        'menuContent' :{
-          	templateUrl: "templates/blog.html",
-		  		controller: "BlogCtrl"
-        }
-      }
-    })
+
 	 // profile page
 	 .state('app.profile', {
       url: "/profile",
@@ -233,25 +223,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       abstract: true,
       templateUrl: "templates/wordpress/sidebar-menu.html"
     })
-	 // Blog page
-	 .state('wordpress.blog', {
-      url: "/blog",
-      views: {
-        'menuWorPress' :{
-          	templateUrl: "templates/wordpress/blog.html",
-		  		controller: "WordpressBlogCtrl"
-        }
-      }
-    })
-	 .state('wordpress.tag', {
-      url: "/tag/:type/:slug",
-      views: {
-        'menuWorPress' :{
-          	templateUrl: "templates/wordpress/blog.html",
-		  		controller: "WordpressTagCtrl"
-        }
-      }
-    })
+
 	 // articles page wordpress
 	 .state('wordpress.post', {
       url: "/post",
