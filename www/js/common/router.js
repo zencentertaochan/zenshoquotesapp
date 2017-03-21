@@ -289,6 +289,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
             }
           }
         })
-
+    .state('quotes.tag', {
+      url: "/tag/:type/:slug",
+      views: {
+        'menuQuotes' :{
+          	templateUrl: "templates/quotes/latest.html",
+		  		controller: "WordpressTagCtrl"
+        }
+      }
+    })
   	$urlRouterProvider.otherwise("/quotes/latest");
 })

@@ -280,6 +280,23 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-
+    .state('quotes.categories', {
+          url: "/categories",
+          views: {
+            'menuQuotes' :{
+              	templateUrl: "templates/quotes/categories.html",
+    		  		controller: "WordpressCategoriesCtrl"
+            }
+          }
+        })
+    .state('quotes.tag', {
+      url: "/tag/:type/:slug",
+      views: {
+        'menuQuotes' :{
+          	templateUrl: "templates/quotes/latest.html",
+		  		controller: "WordpressTagCtrl"
+        }
+      }
+    })
   	$urlRouterProvider.otherwise("/quotes/latest");
 })
