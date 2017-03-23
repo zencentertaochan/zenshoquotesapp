@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="49512a42-471b-4bcd-b293-50262608ae24" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/icon.psd" afterPath="$PROJECT_DIR$/resources/icon.psd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/quotes/about.html" afterPath="$PROJECT_DIR$/www/templates/quotes/about.html" />
     </list>
     <ignored path="zenshoquotes.iws" />
     <ignored path=".idea/workspace.xml" />
