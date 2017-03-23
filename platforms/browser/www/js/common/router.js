@@ -298,5 +298,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
+    .state('quotes.contact', {
+              url: "/contact",
+              views: {
+                'menuQuotes' :{
+                  	templateUrl: "templates/quotes/contact.html",
+        		  		controller: "ContactCtrl"
+                }
+              }
+            })
   	$urlRouterProvider.otherwise("/quotes/latest");
 })

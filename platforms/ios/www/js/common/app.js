@@ -10,8 +10,8 @@ app.constant("Config", {
 })
 // config contact
 app.constant("ConfigContact", {
-  "EmailId": "weblogtemplatesnet@gmail.com",
-  "ContactSubject": "Contact"
+  "EmailId": "anfrage@tao-chan.de",
+  "ContactSubject": "Contact [App]"
 })
 // push notification
 app.constant("PushNoti", {
