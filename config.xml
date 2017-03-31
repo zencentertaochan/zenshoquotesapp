@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="org.taochan.zenshoquotes.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Zenshos Quotes</name>
+  <name>Zensho W. Kopp</name>
   <description>
-        Quotes of Zen-Master Zensho W. Kopp
+        Zitate von Zen-Meister Zensho W. Kopp
     </description>
   <author email="info@tao-chan.org" href="http://www.tao-chan.org">
-        Zen-Center Tao Chan
+        Zen-Zentrum Tao Chan
     </author>
   <content src="index.html"/>
   <plugin name="cordova-plugin-whitelist" spec="1.3.1" />
