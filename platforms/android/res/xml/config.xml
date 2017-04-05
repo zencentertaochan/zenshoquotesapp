@@ -20,12 +20,12 @@
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         <param name="onload" value="true" />
     </feature>
-    <name>Zenshos Quotes</name>
+    <name>Zensho W. Kopp</name>
     <description>
-        Quotes of Zen-Master Zensho W. Kopp
+        Zitate von Zen-Meister Zensho W. Kopp
     </description>
     <author email="info@tao-chan.org" href="http://www.tao-chan.org">
-        Zen-Center Tao Chan
+        Zen-Zentrum Tao Chan
     </author>
     <content src="index.html" />
     <access origin="*" />

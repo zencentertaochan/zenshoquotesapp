@@ -21,7 +21,7 @@ app.run(function($rootScope, globalFactory) {
 /* Blog controller */
 app.controller('WordpressBlogCtrl', ['$scope', 'WordPress', '$state', function($scope, WordPress, $state) {	
 
-	$scope.heading = "Zenshos Quotes";
+	$scope.heading = "Zenshos Worte";
 	$scope.items = [];
 	$scope.times = 1 ;
 	$scope.postsCompleted = false;

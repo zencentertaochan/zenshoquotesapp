@@ -367,3 +367,17 @@ img.profile-pic {
   font-size: 16px !important;
   font-weight: bold;
 }
+
+.bar.bar-assertive{
+    background-color: #990000;
+    border-color: silver;
+        border-width: 0 0 5px;
+        box-shadow: 0 8px 15px 0 rgba(50, 50, 50, 0.49);
+}
+
+.has-header{
+    top: 72px;
+}
+.bar {
+    height: 52px;
+}

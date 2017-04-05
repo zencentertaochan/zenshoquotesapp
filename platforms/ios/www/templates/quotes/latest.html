@@ -11,14 +11,10 @@
             <div class="item tabs tabs-secondary tabs-icon-left">
                 <a ng-click="shareArticle(item.thumbnail_images.full.url);" class="tab-item">
                    <i class="icon ion-share"></i>
-                   Share
+                   Teilen
                 </a>
              </div>
       </div>
-       <div class="item item-divider" ng-show="post.categories.length > 0">Categories</div>
-       <div ng-show="post.categories.length > 0" class="item">
-           <span ng-repeat = "cat in post.categories"><a class="button button-small" href="#/wordpress/tag/category/{{cat.slug}}">{{cat.title}}</a></span>
-       </div>
       <ion-infinite-scroll
        	ng-if="postsCompleted == false"
        	on-infinite="getPosts()"
