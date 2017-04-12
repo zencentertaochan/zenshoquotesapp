@@ -19,7 +19,7 @@ app.run(function($rootScope, globalFactory) {
 	$rootScope.globalFunction = globalFactory;
 });
 /* Blog controller */
-app.controller('WordpressBlogCtrl', ['$scope', 'WordPress', '$state', function($scope, WordPress, $state) {	
+app.controller('WordpressBlogCtrl', ['$scope', 'WordPress', '$ionicModal', function($scope, WordPress, $ionicModal) {
 
 	$scope.heading = "Zenshos Worte";
 	$scope.items = [];
@@ -49,10 +49,48 @@ app.controller('WordpressBlogCtrl', ['$scope', 'WordPress', '$state', function($
 		$scope.getPosts();
 		$scope.$broadcast('scroll.refreshComplete');
 	}
-	$scope.showFullPost = function(index){
-		WordPress.postSelected = $scope.items[index];
-		$state.go('wordpress.post');
-	}
+
+//	// modal to show image full screen
+      $ionicModal.fromTemplateUrl('templates/image-modal.html', {
+          scope: $scope,
+          animation: 'slide-in-up'
+       }).then(function (modal) {
+          $scope.modal = modal;
+       });
+	$scope.openModal = function () {
+    		$scope.showNav = true;
+          $scope.modal.show();
+       };
+
+       $scope.closeModal = function () {
+          $scope.modal.hide();
+       };
+	// show image in popup
+   $scope.showImage = function (index) {
+        $scope.imageIndex = index;
+      $scope.imageSrc = $scope.items[index].thumbnail_images.full.url;
+      $scope.openModal();
+   }
+    // image navigation // swiping and buttons will also work here
+    $scope.imageNavigate = function(dir){
+        if(dir == 'right'){
+            $scope.imageIndex = $scope.imageIndex + 1;
+        } else {
+            $scope.imageIndex = $scope.imageIndex - 1;
+        }
+        //alert(dir);
+        if($scope.items[$scope.imageIndex] === undefined){
+            $scope.closeModal();
+        } else {
+            $scope.imageSrc = $scope.items[$scope.imageIndex].thumbnail_images.full.url;
+        }
+    }
+	// cleaning modal
+    $scope.$on('$stateChangeStart', function(){
+      $scope.modal.remove();
+    });
+
+
 }])
 /* post controller */
 app.controller('WordpressPostCtrl', ['$scope', 'WordPress', '$stateParams', '$sce', function($scope, WordPress, $stateParams, $sce) {	

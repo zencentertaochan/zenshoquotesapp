@@ -158,6 +158,7 @@ app.controller('GalleryCtrl', ['$scope', 'Photos', '$ionicModal', function($scop
    };
 	// show image in popup
    $scope.showImage = function (index) {
+        alert('ddd');
 		$scope.imageIndex = index;
       $scope.imageSrc = $scope.items[index].image_full;
       $scope.openModal();
