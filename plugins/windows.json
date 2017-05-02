@@ -1,0 +1,30 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.phonegap.plugins.PushPlugin": {
+            "PACKAGE_NAME": "Zensho W. Kopp"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "Zensho W. Kopp"
+        },
+        "cordova-plugin-email-composer": {
+            "PACKAGE_NAME": "Zensho W. Kopp"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "Zensho W. Kopp"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "Zensho W. Kopp"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "Zensho W. Kopp"
+        }
+    },
+    "dependent_plugins": {}
+}

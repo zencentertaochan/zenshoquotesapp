@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="org.taochan.zenshoquotes.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Zensho W. Kopp</name>
+    <description>
+        Zitate von Zen-Meister Zensho W. Kopp
+    </description>
+    <author email="info@tao-chan.org" href="http://www.tao-chan.org">
+        Zen-Zentrum Tao Chan
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <icon src="icon.png" />
+    <splash src="drawable-port-xhdpi-screen.png" />
+    <preference name="SplashScreen" value="splash" />
+    <preference name="AutoHideSplashScreen" value="true" />
+</widget>
