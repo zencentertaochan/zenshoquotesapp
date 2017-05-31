@@ -17,3 +17,9 @@ app.constant("ConfigContact", {
 app.constant("PushNoti", {
   "senderID": "321948427526",
 })
+
+var db = null;
+
+document.addEventListener('deviceready', function() {
+  db = window.sqlitePlugin.openDatabase({name: 'favs.db', location: 'default'});
+});

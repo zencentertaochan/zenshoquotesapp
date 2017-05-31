@@ -8,6 +8,11 @@ app.controller('WpCtrl', ['$scope', '$state', '$ionicSlideBoxDelegate', function
 	$scope.shareArticle = function(url){
 		window.plugins.socialsharing.share(null, null, url,null)
 	}
+
+	$scope.favArticle = function(url){
+	    db = window.sqlitePlugin.openDatabase({name: 'demo.db', location: 'default'});
+    	alert(url)
+    }
 	$scope.openLinkArticle = function(url){
 		window.open(url, '_system');
 	}

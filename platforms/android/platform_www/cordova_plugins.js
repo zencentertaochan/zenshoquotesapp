@@ -1,14 +1,6 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
-        "id": "cordova-plugin-x-socialsharing.SocialSharing",
-        "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
-        "pluginId": "cordova-plugin-x-socialsharing",
-        "clobbers": [
-            "window.plugins.socialsharing"
-        ]
-    },
-    {
         "id": "com.phonegap.plugins.PushPlugin.PushNotification",
         "file": "plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js",
         "pluginId": "com.phonegap.plugins.PushPlugin",
@@ -40,17 +32,34 @@ module.exports = [
         "clobbers": [
             "navigator.splashscreen"
         ]
+    },
+    {
+        "id": "cordova-plugin-x-socialsharing.SocialSharing",
+        "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+        "pluginId": "cordova-plugin-x-socialsharing",
+        "clobbers": [
+            "window.plugins.socialsharing"
+        ]
+    },
+    {
+        "id": "cordova-sqlite-storage.SQLitePlugin",
+        "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+        "pluginId": "cordova-sqlite-storage",
+        "clobbers": [
+            "SQLitePlugin"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "cordova-plugin-whitelist": "1.3.1",
-    "cordova-plugin-x-socialsharing": "5.1.6",
     "com.phonegap.plugins.PushPlugin": "2.5.0",
     "cordova-plugin-device": "1.1.4",
     "cordova-plugin-email-composer": "0.8.3",
-    "cordova-plugin-splashscreen": "4.0.2-dev"
+    "cordova-plugin-splashscreen": "4.0.2-dev",
+    "cordova-plugin-whitelist": "1.3.1",
+    "cordova-plugin-x-socialsharing": "5.1.6",
+    "cordova-sqlite-storage": "2.0.4"
 };
 // BOTTOM OF METADATA
 });

@@ -24,6 +24,9 @@
         },
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "Zensho W. Kopp"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "Zensho W. Kopp"
         }
     },
     "dependent_plugins": {}

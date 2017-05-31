@@ -24,6 +24,9 @@
         },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
         }
     },
     "dependent_plugins": {}

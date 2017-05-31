@@ -7,12 +7,6 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
-        },
-        "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
-        },
         "com.phonegap.plugins.PushPlugin": {
             "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
         },
@@ -23,6 +17,15 @@
             "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
         },
         "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
+        },
+        "cordova-sqlite-storage": {
             "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
         }
     },
