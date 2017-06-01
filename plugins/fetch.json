@@ -57,10 +57,10 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-sqlite-storage": {
+    "cordova-sqlite-legacy-build-support": {
         "source": {
             "type": "registry",
-            "id": "cordova-sqlite-storage@^2.0.4"
+            "id": "https://github.com/litehelpers/Cordova-sqlite-legacy-build-support"
         },
         "is_top_level": true,
         "variables": {}

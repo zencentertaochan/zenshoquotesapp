@@ -82,23 +82,23 @@ module.exports = [
         "runs": true
     },
     {
-        "id": "cordova-sqlite-storage.SQLitePlugin",
-        "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
-        "pluginId": "cordova-sqlite-storage",
+        "id": "cordova-sqlite-legacy-build-support.SQLitePlugin",
+        "file": "plugins/cordova-sqlite-legacy-build-support/www/SQLitePlugin.js",
+        "pluginId": "cordova-sqlite-legacy-build-support",
         "clobbers": [
             "SQLitePlugin"
         ]
     },
     {
-        "id": "cordova-sqlite-storage.SQLiteProxy",
-        "file": "plugins/cordova-sqlite-storage/src/windows/sqlite-proxy.js",
-        "pluginId": "cordova-sqlite-storage",
+        "id": "cordova-sqlite-legacy-build-support.SQLiteProxy",
+        "file": "plugins/cordova-sqlite-legacy-build-support/src/windows/sqlite-proxy.js",
+        "pluginId": "cordova-sqlite-legacy-build-support",
         "runs": true
     },
     {
-        "id": "cordova-sqlite-storage.SQLite3",
-        "file": "plugins/cordova-sqlite-storage/src/windows/SQLite3-Win-RT/SQLite3JS/js/SQLite3.js",
-        "pluginId": "cordova-sqlite-storage",
+        "id": "cordova-sqlite-legacy-build-support.SQLite3",
+        "file": "plugins/cordova-sqlite-legacy-build-support/src/windows/SQLite3-Win-RT/SQLite3JS/js/SQLite3.js",
+        "pluginId": "cordova-sqlite-legacy-build-support",
         "runs": true
     }
 ];
@@ -111,7 +111,7 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "4.0.2-dev",
     "cordova-plugin-whitelist": "1.3.1",
     "cordova-plugin-x-socialsharing": "5.1.6",
-    "cordova-sqlite-storage": "2.0.4"
+    "cordova-sqlite-legacy-build-support": "1.3.5-pre1"
 };
 // BOTTOM OF METADATA
 });

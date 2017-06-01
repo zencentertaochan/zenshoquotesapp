@@ -1,5 +1,5 @@
 // wordpress controller // 
-app.controller('WpCtrl', ['$scope', '$state', '$ionicSlideBoxDelegate', function($scope, $state, $ionicSlideBoxDelegate) {
+app.controller('WpCtrl', ['$scope', '$state', '$ionicSlideBoxDelegate', function($scope, $state, $ionicSlideBoxDelegate,  $cordovaSQLite) {
   // Toggle left function for app sidebar
   	$scope.toggleLeft = function() {
     	$ionicSideMenuDelegate.toggleLeft();
@@ -10,8 +10,15 @@ app.controller('WpCtrl', ['$scope', '$state', '$ionicSlideBoxDelegate', function
 	}
 
 	$scope.favArticle = function(url){
-	    db = window.sqlitePlugin.openDatabase({name: 'demo.db', location: 'default'});
-    	alert(url)
+	    var db = $cordovaSQLite.openDB({ name: "my.db" });
+    	var query = "INSERT INTO test_table (data, data_num) VALUES (?,?)";
+        $cordovaSQLite.execute(db, query, ["test", 100]).then(function(res) {
+          console.log("insertId: " + res.insertId);
+        }, function (err) {
+          console.error(err);
+        });
+
+    	alert(url);
     }
 	$scope.openLinkArticle = function(url){
 		window.open(url, '_system');
