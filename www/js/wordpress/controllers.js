@@ -12,7 +12,7 @@ app.controller('WpCtrl', ['$scope', '$state', '$ionicSlideBoxDelegate','$cordova
 
 	$scope.favArticle = function(url){
 	    try {
-			var db = $cordovaSQLite.openDB({ name: "my.db" });
+			var db = $cordovaSQLite.openDB({ name: "my.db", location: 'default'});
     	var query = "INSERT INTO fav_table (data) VALUES (?)";
         $cordovaSQLite.execute(db, query, [url]).then(function(res) {
           console.log("insertId: " + res.insertId);
