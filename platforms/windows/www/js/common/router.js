@@ -270,7 +270,15 @@
         }
       }
     })
-
+    .state('quotes.favs', {
+      url: "/favs",
+      views: {
+        'menuQuotes' :{
+          	templateUrl: "templates/quotes/favs.html",
+		  		controller: "WordpressFavCtrl"
+        }
+      }
+    })
     .state('quotes.about', {
       url: "/about",
       views: {

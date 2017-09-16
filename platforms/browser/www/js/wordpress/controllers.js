@@ -17,11 +17,7 @@ app.controller('WpCtrl', ['$scope', '$state', '$ionicSlideBoxDelegate','$cordova
 
 			var queryCreateTable = "CREATE TABLE IF NOT EXISTS favlist (id integer primary key, url text)"
 
-			$cordovaSQLite.execute(db, queryCreateTable).then(function(res) {
-				alert("table created");
-			  }, function (err) {
-				alert(err);
-			  });
+			$cordovaSQLite.execute(db, queryCreateTable);
 
 			var query = "INSERT INTO favlist ( url) VALUES (?)";
 			$cordovaSQLite.execute(db, query, [url]).then(function(res) {
@@ -195,6 +191,38 @@ app.controller('WordpressCategoriesCtrl', ['$scope', 'WordPress', '$stateParams'
 		$scope.getPosts();
 		$scope.$broadcast('scroll.refreshComplete');
 	}
+}])
+app.controller('WordpressFavCtrl', ['$scope', 'WordPress', '$stateParams', '$ionicModal', function($scope, WordPress, $ionicModal) {
+	
+	$scope.heading = "Favoriten";
+	$scope.items = [];
+	$scope.times = 1 ;
+	$scope.postsCompleted = false;
+	// load more content function
+	$scope.getPosts = function(){
+		WordPress.getPosts($scope.times)
+		.success(function (posts) {
+		    console.log(posts);
+			$scope.items = $scope.items.concat(posts.posts);
+			$scope.$broadcast('scroll.infiniteScrollComplete');
+			$scope.times = $scope.times+1;
+			if(posts.posts.length == 0) {
+				$scope.postsCompleted = true;
+			}
+		})
+		.error(function (error) {
+			$scope.items = [];
+		});
+	}
+	// pull to refresh buttons
+	$scope.doRefresh = function(){
+		$scope.times = 1 ;
+		$scope.items = [];
+		$scope.postsCompleted = false;
+		$scope.getPosts();
+		$scope.$broadcast('scroll.refreshComplete');
+	}
+
 }])
 /* category and tags controller */
 app.controller('WordpressTagsCtrl', ['$scope', 'WordPress', '$stateParams', function($scope, WordPress, $stateParams) {
