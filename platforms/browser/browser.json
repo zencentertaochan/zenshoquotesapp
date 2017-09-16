@@ -31,12 +31,6 @@
         "com.phonegap.plugins.PushPlugin": {
             "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
         },
-        "cordova-plugin-extension": {
-            "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
-        },
-        "cordova-plugin-admobpro": {
-            "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
-        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
         },
@@ -52,7 +46,7 @@
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
         },
-        "cordova-sqlite-legacy-build-support": {
+        "cordova-plugin-sqlite-2": {
             "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
         }
     },
@@ -64,14 +58,6 @@
             "pluginId": "com.phonegap.plugins.PushPlugin",
             "clobbers": [
                 "PushNotification"
-            ]
-        },
-        {
-            "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
-            "id": "cordova-plugin-admobpro.AdMob",
-            "pluginId": "cordova-plugin-admobpro",
-            "clobbers": [
-                "window.AdMob"
             ]
         },
         {
@@ -126,23 +112,21 @@
             "runs": true
         },
         {
-            "file": "plugins/cordova-sqlite-legacy-build-support/www/SQLitePlugin.js",
-            "id": "cordova-sqlite-legacy-build-support.SQLitePlugin",
-            "pluginId": "cordova-sqlite-legacy-build-support",
+            "file": "plugins/cordova-plugin-sqlite-2/dist/sqlite-plugin.js",
+            "id": "cordova-plugin-sqlite-2.sqlitePlugin",
+            "pluginId": "cordova-plugin-sqlite-2",
             "clobbers": [
-                "SQLitePlugin"
+                "sqlitePlugin"
             ]
         }
     ],
     "plugin_metadata": {
         "com.phonegap.plugins.PushPlugin": "2.5.0",
-        "cordova-plugin-extension": "1.5.1",
-        "cordova-plugin-admobpro": "2.26.0",
         "cordova-plugin-device": "1.1.4",
         "cordova-plugin-email-composer": "0.8.3",
         "cordova-plugin-whitelist": "1.3.1",
         "cordova-plugin-x-socialsharing": "5.1.6",
         "cordova-plugin-splashscreen": "4.0.2-dev",
-        "cordova-sqlite-legacy-build-support": "1.3.5-pre1"
+        "cordova-plugin-sqlite-2": "1.0.4"
     }
 }

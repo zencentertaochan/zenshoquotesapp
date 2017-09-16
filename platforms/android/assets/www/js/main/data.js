@@ -201,11 +201,6 @@ app.factory('Features', function(){
             icon: 'ion-ios-people',
             url: '#/app/about'
         },
-		  { 
-            title: 'Admob',
-            icon: 'ion-cash',
-            url: '#/app/admob'
-        },
         { 
             title: 'Push Notification',
             icon: 'ion-paper-airplane',

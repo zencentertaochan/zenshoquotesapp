@@ -72,7 +72,4 @@
         <PreBuildEvent>node "$(ProjectDir)\\cordova\\prebuild-phone-81.js"</PreBuildEvent>
         <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
     </PropertyGroup>
-    <ItemGroup>
-        <ProjectReference Include="..\..\plugins\cordova-sqlite-legacy-build-support\src\windows\SQLite3-Win-RT\SQLite3\SQLite3.WindowsPhone\SQLite3.WindowsPhone.vcxproj" />
-    </ItemGroup>
 </Project>
