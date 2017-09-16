@@ -14,23 +14,22 @@ app.controller('WpCtrl', ['$scope', '$state', '$ionicSlideBoxDelegate','$cordova
 	    try {
 			
 			var db = $cordovaSQLite.openDB('favorites.db');
-			var query = "INSERT INTO test_table (data, data_num) VALUES (?,?)";
-			$cordovaSQLite.execute(db, query, ["test", 100]).then(function(res) {
+
+			var queryCreateTable = "CREATE TABLE IF NOT EXISTS favlist (id integer primary key, url text)"
+
+			$cordovaSQLite.execute(db, queryCreateTable).then(function(res) {
+				alert("table created");
+			  }, function (err) {
+				alert(err);
+			  });
+
+			var query = "INSERT INTO favlist ( url) VALUES (?)";
+			$cordovaSQLite.execute(db, query, [url]).then(function(res) {
 			  alert("insertId: " + res.insertId);
 			}, function (err) {
 			  alert(err);
 			});
 			
-		// 	var db = window.sqlitePlugin.openDatabase({name: 'favs.db', location: 'default'});
-			
-    	// 	var query = "INSERT INTO fav_table (data) VALUES (?)";
-        // 	window.sqlitePlugin.execute(db, query, [url]).then(function(res) {
-        //   console.log("insertId: " + res.insertId);
-		 // alert(res.insertId);
-        // }, function (err) {
-        //   console.error(err);
-		  
-        // });
 
 		} catch (error) {
 			alert(error);
