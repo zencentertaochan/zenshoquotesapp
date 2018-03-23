@@ -1,6 +1,41 @@
-// friends factory
+/* app.factory('Favs',['$cordovaSQLite'], function($cordovaSQLite){
+	var data = {};
+	data.getEntries = function() {
+		console.log("getentriies");
+		console.log($cordovaSQLite);
+
+		try {
+
+			var db = $scope.initFavs();
+			var query = "SELECT * from favlist";
+			$cordovaSQLite.execute(db, query, [url]).then(function(res) {
+
+				var index = -1;
+				var length = res.rows.length;
+				var entries = Array(res.rows.length);
+
+				while (++index < length) {
+					entries.push(res.rows[index]['data'])
+				}
+				return entries;
+			});
+			
+
+		} catch (error) {
+			console.error(error);
+		}
+	}
+	return data;
+});
+ */
+
 app.factory('WordPress',['$http', 'Config', function($http, Config) {
 	var data = {};
+	data.getFavs = function(db){
+		alert(db);
+		return  [];
+	}
+	
 	data.getPosts = function (page) {
 		return $http(
 			{

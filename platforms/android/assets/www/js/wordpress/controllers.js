@@ -1,5 +1,8 @@
-// wordpress controller // 
+
+
 app.controller('WpCtrl', ['$scope', '$state', '$ionicSlideBoxDelegate','$cordovaSQLite', function($scope, $state, $ionicSlideBoxDelegate,  $cordovaSQLite) {
+
+	
 
   // Toggle left function for app sidebar
   	$scope.toggleLeft = function() {
@@ -9,26 +12,36 @@ app.controller('WpCtrl', ['$scope', '$state', '$ionicSlideBoxDelegate','$cordova
 	$scope.shareArticle = function(url){
 		window.plugins.socialsharing.share(null, null, url,null)
 	}
+	
 
-	$scope.favArticle = function(url){
-	    try {
-			
+	$scope.initFavs = function($cordovaSQLite){
+		try {
 			var db = $cordovaSQLite.openDB('favorites.db');
-
-			var queryCreateTable = "CREATE TABLE IF NOT EXISTS favlist (id integer primary key, url text)"
-
+			
+			var queryCreateTable = "CREATE TABLE IF NOT EXISTS favlist (id integer primary key, url text, data text)"
 			$cordovaSQLite.execute(db, queryCreateTable);
+			return db;
+		} catch (error) {
+			console.error(error);
+		}
+	
+	}
 
-			var query = "INSERT INTO favlist ( url) VALUES (?)";
-			$cordovaSQLite.execute(db, query, [url]).then(function(res) {
+	$scope.favArticle = function(item){
+	    try {
+
+			var db = $scope.initFavs($cordovaSQLite);
+			var query = "INSERT INTO favlist (url, data) VALUES (?,?)";
+
+			$cordovaSQLite.execute(db, query, [item.thumbnail_images.full.url, item]).then(function(res) {
 			  alert("insertId: " + res.insertId);
-			}, function (err) {
-			  alert(err);
+			}, function (error) {
+				console.error(error);
 			});
 			
 
 		} catch (error) {
-			alert(error);
+			console.error(error);
 		}
 		
     	
@@ -36,6 +49,7 @@ app.controller('WpCtrl', ['$scope', '$state', '$ionicSlideBoxDelegate','$cordova
 	$scope.openLinkArticle = function(url){
 		window.open(url, '_system');
 	}
+
 }])
 /* 
 another cool app function -- so we can call it directly from view page
@@ -43,7 +57,30 @@ another cool app function -- so we can call it directly from view page
 app.run(function($rootScope, globalFactory) {
 	$rootScope.globalFunction = globalFactory;
 });
-/* Blog controller */
+
+// wordpress controller // 
+app.controller('WordpressFavCtrl', ['$scope', 'WordPress','$cordovaSQLite', function($scope, WordPress, $cordovaSQLite) {
+	$scope.items = [];
+	$scope.times = 1 ;
+	$scope.postsCompleted = false;
+
+	// load more content function
+	$scope.getFavs = function(){
+		var db = $scope.initFavs($cordovaSQLite);
+		$scope.items = WordPress.getFavs(db);
+		$scope.postsCompleted = true;
+	}
+	// pull to refresh buttons
+	$scope.doRefresh = function(){
+		$scope.times = 1 ;
+		$scope.items = [];
+		$scope.postsCompleted = false;
+		$scope.getPosts();
+		$scope.$broadcast('scroll.refreshComplete');
+	}
+
+}])
+
 app.controller('WordpressBlogCtrl', ['$scope', 'WordPress', '$ionicModal', function($scope, WordPress, $ionicModal) {
 
 	$scope.heading = "Zenshos Worte";
@@ -54,7 +91,6 @@ app.controller('WordpressBlogCtrl', ['$scope', 'WordPress', '$ionicModal', funct
 	$scope.getPosts = function(){
 		WordPress.getPosts($scope.times)
 		.success(function (posts) {
-		    console.log(posts);
 			$scope.items = $scope.items.concat(posts.posts);
 			$scope.$broadcast('scroll.infiniteScrollComplete');
 			$scope.times = $scope.times+1;
@@ -192,38 +228,7 @@ app.controller('WordpressCategoriesCtrl', ['$scope', 'WordPress', '$stateParams'
 		$scope.$broadcast('scroll.refreshComplete');
 	}
 }])
-app.controller('WordpressFavCtrl', ['$scope', 'WordPress', '$stateParams', '$ionicModal', function($scope, WordPress, $ionicModal) {
-	
-	$scope.heading = "Favoriten";
-	$scope.items = [];
-	$scope.times = 1 ;
-	$scope.postsCompleted = false;
-	// load more content function
-	$scope.getPosts = function(){
-		WordPress.getPosts($scope.times)
-		.success(function (posts) {
-		    console.log(posts);
-			$scope.items = $scope.items.concat(posts.posts);
-			$scope.$broadcast('scroll.infiniteScrollComplete');
-			$scope.times = $scope.times+1;
-			if(posts.posts.length == 0) {
-				$scope.postsCompleted = true;
-			}
-		})
-		.error(function (error) {
-			$scope.items = [];
-		});
-	}
-	// pull to refresh buttons
-	$scope.doRefresh = function(){
-		$scope.times = 1 ;
-		$scope.items = [];
-		$scope.postsCompleted = false;
-		$scope.getPosts();
-		$scope.$broadcast('scroll.refreshComplete');
-	}
 
-}])
 /* category and tags controller */
 app.controller('WordpressTagsCtrl', ['$scope', 'WordPress', '$stateParams', function($scope, WordPress, $stateParams) {
 		

@@ -1,4 +1,4 @@
-<ion-view view-title="{{heading}}">
+<ion-view view-title="Favoriten">
    <ion-content class="post-content">
    	<ion-refresher
        	pulling-text="Pull to refresh..."
@@ -23,7 +23,7 @@
       </div>
       <ion-infinite-scroll
        	ng-if="postsCompleted == false"
-       	on-infinite="getPosts()"
+       	on-infinite="getFavs()"
        	distance="10%">
      	</ion-infinite-scroll>
    </ion-content>
