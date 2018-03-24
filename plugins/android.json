@@ -25,7 +25,7 @@
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
         },
-        "cordova-plugin-sqlite-2": {
+        "cordova-sqlite-storage": {
             "PACKAGE_NAME": "org.taochan.zenshoquotes.app"
         }
     },

@@ -14,35 +14,27 @@ app.controller('WpCtrl', ['$scope', '$state', '$ionicSlideBoxDelegate','$cordova
 	}
 	
 
-	$scope.initFavs = function($cordovaSQLite){
-		try {
-			var db = $cordovaSQLite.openDB('favorites.db');
-			
-			var queryCreateTable = "CREATE TABLE IF NOT EXISTS favlist (id integer primary key, url text, data text)"
-			$cordovaSQLite.execute(db, queryCreateTable);
-			return db;
-		} catch (error) {
-			console.error(error);
-		}
-	
-	}
 
 	$scope.favArticle = function(item){
-	    try {
 
-			var db = $scope.initFavs($cordovaSQLite);
+
+		favsdb.transaction(function (tx) {
+
 			var query = "INSERT INTO favlist (url, data) VALUES (?,?)";
-
-			$cordovaSQLite.execute(db, query, [item.thumbnail_images.full.url, item]).then(function(res) {
-			  alert("insertId: " + res.insertId);
-			}, function (error) {
-				console.error(error);
+	
+			tx.executeSql(query, [item.thumbnail_images.full.url,item], function(tx, res) {
+				alert("insertId: " + res.insertId + " -- probably 1");
+				alert("rowsAffected: " + res.rowsAffected + " -- should be 1");
+			},
+			function(tx, error) {
+				alert('INSERT error: ' + error.message);
 			});
+		}, function(error) {
+			alert('transaction error: ' + error.message);
+		}, function() {
+			alert('transaction ok');
+		});
 			
-
-		} catch (error) {
-			console.error(error);
-		}
 		
     	
     }
@@ -59,7 +51,7 @@ app.run(function($rootScope, globalFactory) {
 });
 
 // wordpress controller // 
-app.controller('WordpressFavCtrl', ['$scope', 'WordPress','$cordovaSQLite', function($scope, WordPress, $cordovaSQLite) {
+app.controller('WordpressFavCtrl', ['$scope', 'WordPress','$cordovaSQLite','$ionicModal', function($scope, WordPress, $cordovaSQLite,$ionicModal) {
 	$scope.items = [];
 	$scope.times = 1 ;
 	$scope.postsCompleted = false;
