@@ -20,9 +20,6 @@
     <feature name="SocialSharing">
         <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
     </feature>
-    <feature name="SQLitePlugin">
-        <param name="android-package" value="io.sqlc.SQLitePlugin" />
-    </feature>
     <name>Zensho W. Kopp</name>
     <description>
         Zitate von Zen-Meister Zensho W. Kopp
@@ -63,4 +60,7 @@
     <preference name="SplashScreen" value="splash" />
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreenDelay" value="3000" />
+    <feature name="SQLitePlugin">
+        <param name="android-package" value="io.sqlc.SQLitePlugin" />
+    </feature>
 </widget>
